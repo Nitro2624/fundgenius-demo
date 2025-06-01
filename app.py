@@ -47,7 +47,7 @@ st.header("Suggested Fund Mix & Allocation")
 st.markdown("Here's a proposed allocation of the client's investment amount across the recommended funds.")
 try:
     if suggested_funds: # Only show mix if funds were recommended
-        mix_data = get_fund_mix(suggested_funds, amount)
+        mix_data = get_fund_mix(Fund_Recommendation, amount)
         st.subheader("Investment Allocation Breakdown:")
         total_allocated = 0
         for item in mix_data:
