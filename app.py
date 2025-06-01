@@ -5,7 +5,7 @@ from modules.amfi_data import get_latest_navs_for_sbi
 from modules.manager_notes import get_fund_manager_notes
 from modules.market_data_api import get_live_market_indices, get_stock_data
 
-st.set_page_config(page_title="FundGenius - SBI MF Assistant", layout="wide", icon="💼")
+st.set_page_config(page_title="FundGenius - SBI MF Assistant", layout="wide")
 
 st.title("💼 FundGenius - AI Mutual Fund Assistant (Internal)")
 st.caption("For SBI Mutual Fund Employee Use Only")
