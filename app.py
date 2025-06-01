@@ -7,12 +7,12 @@ from modules.market_data_api import get_live_market_indices, get_stock_data
 
 st.set_page_config(page_title="FundGenius - SBI MF Assistant", layout="wide")
 
-st.title("💼 FundGenius - AI Mutual Fund Assistant (Internal)")
+st.title("FundGenius - AI Mutual Fund Assistant (Internal)")
 st.caption("For SBI Mutual Fund Employee Use Only")
 st.markdown("---")
 
 # --- Sidebar: Client Input & Filters ---
-st.sidebar.header("📋 Client Profile & Filters")
+st.sidebar.header("Client Profile & Filters")
 age = st.sidebar.slider("Client Age", 18, 80, 30, help="Age of the client.")
 risk = st.sidebar.selectbox("Risk Profile", ["Conservative", "Low", "Moderate", "High", "Aggressive"], index=2, help="Client's willingness to take investment risk.")
 goal = st.sidebar.selectbox("Investment Goal", ["Retirement Planning", "Wealth Creation", "Child's Education", "Tax Saving", "General Investment", "Short-term Capital Gain"], help="Primary objective of the investment.")
@@ -25,7 +25,7 @@ st.sidebar.info("Adjust client parameters to get tailored recommendations and in
 # --- Main Content Area ---
 
 # 1. Fund Recommendation
-st.header("🎯 Fund Recommendation")
+st.header("Fund Recommendation")
 st.markdown("Based on the client's profile, here are the suggested fund categories and specific SBI Mutual Fund schemes.")
 try:
     recommended_category, suggested_funds = recommend_funds(risk, duration, goal)
@@ -43,7 +43,7 @@ except Exception as e:
 st.markdown("---")
 
 # 2. Suggested Fund Mix
-st.header("🔄 Suggested Fund Mix & Allocation")
+st.header("Suggested Fund Mix & Allocation")
 st.markdown("Here's a proposed allocation of the client's investment amount across the recommended funds.")
 try:
     if suggested_funds: # Only show mix if funds were recommended
@@ -64,7 +64,7 @@ except Exception as e:
 st.markdown("---")
 
 # 3. Fund Manager Insights
-st.header("🧠 Fund Manager Insights & Commentary")
+st.header("Fund Manager Insights & Commentary")
 st.markdown("Stay updated with the latest commentary and outlook from our expert fund managers.")
 try:
     notes = get_fund_manager_notes()
@@ -79,7 +79,7 @@ except Exception as e:
 st.markdown("---")
 
 # 4. Live NAVs (SBI Mutual Funds)
-st.header("📈 SBI Mutual Fund NAVs (Live)")
+st.header("SBI Mutual Fund NAVs (Live)")
 st.markdown("Access the latest Net Asset Values (NAVs) for SBI Mutual Fund schemes. Data typically updated daily after market close.")
 try:
     # This function should fetch actual NAVs from AMFI or a reliable API
@@ -95,7 +95,7 @@ except Exception as e:
 st.markdown("---")
 
 # 5. General Market Data (Optional, but highly functional)
-st.header("📊 General Market Overview")
+st.header("General Market Overview")
 st.markdown("Quick glance at key Indian market indices and selected stock performance.")
 
 col1, col2 = st.columns(2)
